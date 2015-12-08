@@ -1,0 +1,6 @@
+---
+script:
+  - docker build -t colstrom/consul .
+ignore:
+  - .git
+...
