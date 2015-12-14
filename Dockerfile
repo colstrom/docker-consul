@@ -1,4 +1,4 @@
-FROM colstrom/alpine:main
+FROM colstrom/alpine
 
 ENV CONSUL_VERSION 0.6.0
 ENV CONSUL_SHA256 307fa26ae32cb8732aed2b3320ed8daf02c28b50d952cbaae8faf67c79f78847
