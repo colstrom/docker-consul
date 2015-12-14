@@ -6,4 +6,6 @@ bootstrap:
 server:
   image: colstrom/consul
   command: agent -data-dir /data -server -bootstrap-expect 2 -bind 0.0.0.0 -join bootstrap
+  links:
+    - bootstrap
 ...
