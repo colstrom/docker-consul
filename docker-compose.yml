@@ -8,4 +8,9 @@ server:
   command: agent -data-dir /data -server -bootstrap-expect 2 -bind 0.0.0.0 -join bootstrap
   links:
     - bootstrap
+agent:
+  image: colstrom/consul
+  command: agent -data-dir /data -bind 0.0.0.0 -join server
+  links:
+    - server
 ...
