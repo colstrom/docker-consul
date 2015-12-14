@@ -2,8 +2,8 @@
 bootstrap:
   image: colstrom/consul
   container_name: consul-bootstrap
-  command: agent -data-dir /data -server -bootstrap-expect 2
+  command: agent -data-dir /data -server -bootstrap-expect 2 -bind 0.0.0.0
 server:
   image: colstrom/consul
-  command: agent -data-dir /data -server -bootstrap-expect 2 -join consul-bootstrap
+  command: agent -data-dir /data -server -bootstrap-expect 2 -bind 0.0.0.0 -join bootstrap
 ...
