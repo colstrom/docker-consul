@@ -20,15 +20,18 @@ docker run colstrom/consul agent -data-dir /data -join $IP_OF_ANY_CLUSTER_MEMBER
 ```
 
 ## Exposed Ports
-* 8300
-* 8301
-* 8301/udp
-* 8302
-* 8302/udp
-* 8400
-* 8500
-* 8600
-* 8600/udp
+
+| Port       | Purpose             | Description
+|------------|---------------------|--------
+| `8300`     | Server RPC          | Used by servers to handle incoming requests from other agents.
+| `8301`     | Serf LAN            | Used to handle gossip in the LAN. Required by all agents.
+| `8301/udp` | Serf LAN (UDP)      | Used to handle gossip in the LAN. Required by all agents.
+| `8302`     | Serf LAN            | Used by servers to gossip over the WAN to other servers.
+| `8302/udp` | Serf LAN (UDP)      | Used by servers to gossip over the WAN to other servers.
+| `8400`     | CLI RPC             | Used by all agents to handle RPC from the CLI.
+| `8500`     | HTTP API            | Used by clients to talk to the HTTP API.
+| `8600`     | DNS Interface       | Used to resolve DNS queries.
+| `8600/udp` | DNS Interface (UDP) | Used to resolve DNS queries.
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
